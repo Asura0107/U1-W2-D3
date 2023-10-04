@@ -111,18 +111,16 @@ const characters = [];
   Dovrai accedere alla proprietà "name" di ogni oggetto in esso contenuto, e inserirla nell'array "characters" creato precedentemente.
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
-for (i = 0; i < starWarsCharacters.length; i++) {
-  const newObj = {
-    name: starWarsCharacters[i].name
-  };
-  characters.push(newObj);
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const newObj = starWarsCharacters[i];
+  characters.push(newObj.name);
 }
 console.log(characters);
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
 const femaleCharacters = [];
-for (i = 0; i < starWarsCharacters.length; i++) {
+for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === "female") {
     femaleCharacters.push(starWarsCharacters[i]);
   }
@@ -133,49 +131,40 @@ console.log(femaleCharacters);
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
-let eyeColor = { blue: [], yellow: [], brown: [], red: [], bluegray: [] };
+let eyeColor = { blue: [], yellow: [], brown: [], red: [], "blue-gray": [] };
 
 /* ESERCIZIO 5
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
-switch (eyeColor) {
-  case "blue":
-    blue.push(starWarsCharacters[(0, 5, 6)]);
-    console.log(blue);
-    break;
-
-  case "yellow":
-    blue.push(starWarsCharacters[(1, 3)]);
-    console.log(yellow);
-    break;
-
-  case "brown":
-    blue.push(starWarsCharacters[(4, 8)]);
-    console.log(brown);
-    break;
-
-  case "red":
-    blue.push(starWarsCharacters[(2, 7)]);
-    console.log(red);
-    break;
-
-  case "bluegray":
-    blue.push(starWarsCharacters[9]);
-    console.log(bluegray);
-    break;
+// quando c'è "ogni" è meglio usare un for
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  switch (starWarsCharacters[i].eye_color) {
+    case "blue":
+      eyeColor.blue.push(starWarsCharacters[i]);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(starWarsCharacters[i]);
+      break;
+    case "brown":
+      eyeColor.brown.push(starWarsCharacters[i]);
+      break;
+    case "red":
+      eyeColor.red.push(starWarsCharacters[i]);
+      break;
+    case "blue-gray":
+      eyeColor["blue-gray"].push(starWarsCharacters[i]);
+      break;
+  }
 }
+console.log(eyeColor);
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
 const crewMass = 0;
-while ( < starWarsCharacters.length) {
-  massa =  starWarsCharacters.mass
-  crwMass+= massa;
-  crewMass ++
-}
-console.log(crewMass)
+
+console.log(crewMass);
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
 
